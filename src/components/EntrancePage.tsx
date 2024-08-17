@@ -1,5 +1,6 @@
 import React from 'react';
 import { useNavigate } from 'react-router-dom';
+import './EntrancePage.css'; // Import the CSS file
 
 const EntrancePage: React.FC = () => {
   const navigate = useNavigate();
@@ -17,31 +18,24 @@ const EntrancePage: React.FC = () => {
   };
 
   return (
-    <div
-      className="entrance-container"
-      style={{ textAlign: 'center', marginTop: '50px' }}
-    >
-      <h1>Hello to the Band</h1>
-      <div style={{ margin: '20px' }}>
-        <button onClick={handleRegister} style={buttonStyle}>
-          Register
-        </button>
-        <button onClick={handleLogin} style={buttonStyle}>
-          Login
-        </button>
-        <button onClick={handleAdmin} style={buttonStyle}>
-          Admin
-        </button>
+    <div id="entranceContainerWrapper">
+      <div className="entranceBackground"></div>
+      <div className="entranceContainer">
+        <h1 className="entranceHeading">Hello to the Moveo Band</h1>
+        <div className="buttonContainer">
+          <button onClick={handleRegister} className="button">
+            User Register
+          </button>
+          <button onClick={handleLogin} className="button">
+            Login
+          </button>
+          <button onClick={handleAdmin} className="button">
+            Admin Register
+          </button>
+        </div>
       </div>
     </div>
   );
-};
-
-const buttonStyle = {
-  margin: '10px',
-  padding: '10px 20px',
-  fontSize: '16px',
-  cursor: 'pointer',
 };
 
 export default EntrancePage;

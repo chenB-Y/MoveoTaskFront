@@ -7,6 +7,7 @@ import LoginPage from './components/LoginForm';
 import RegisterPage from './components/RegisterForm';
 import HomePage from './components/HomePage';
 import EntrancePage from './components/EntrancePage';
+import ErrorPage from './components/ErrorPage';
 
 const App: React.FC = () => {
   return (
@@ -20,6 +21,7 @@ const App: React.FC = () => {
         <Route path="/LivePage" element={<LivePage />} />
         <Route path="/adminHomePage" element={<AdminHomePage />} />
         <Route path="/HomePage" element={<HomePage />} />
+        <Route path="*" element={<ErrorPage />} />
       </Routes>
     </Router>
   );

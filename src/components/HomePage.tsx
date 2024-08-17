@@ -18,7 +18,6 @@ const HomePage: React.FC = () => {
       return;
     }
 
-    console.log('HomePage response:', response);
     const socket = io(`${import.meta.env.VITE_BACK_URL_PROD}`, {
       //const socket = io(`${import.meta.env.VITE_BACK_URL_DEV}`, {
       withCredentials: true,

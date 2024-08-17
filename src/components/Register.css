@@ -1,0 +1,65 @@
+/* Register.css */
+.register-container {
+  display: flex; /* Use Flexbox to arrange items side by side */
+  height: 100vh; /* Full height of the viewport */
+  width: 100vw; /* Full width of the viewport */
+}
+
+.image-section {
+  flex: 1; /* Takes up 50% of the width */
+  background-image: url('https://www.mikoo.co.il/cdn/shop/products/MusicIsTheSoundtrackOfYourLife1_1200x1200.jpg?v=1611272989');
+  background-size: cover; /* Cover the entire div */
+  background-position: center center; /* Center the image */
+  background-repeat: no-repeat; /* Do not repeat the image */
+}
+
+.form-section {
+  background-color: #775c5c;
+  flex: 1; /* Takes up 50% of the width */
+  display: flex; /* Use Flexbox for vertical layout */
+  justify-content: center; /* Center horizontally */
+  align-items: center; /* Center vertically */
+  padding: 20px;
+}
+
+.form-content {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start; /* Align content to the top */
+  align-items: center; /* Center horizontally */
+  width: 100%; /* Full width of the form section */
+}
+
+.register-title {
+  color: black; /* Title color */
+  margin-bottom: 20px; /* Space below the title */
+}
+
+.register-input {
+  color: rgb(6, 6, 6); /* Input text color */
+  font-size: x-large; /* Input font size */
+}
+
+.instrument-note {
+  color: rgb(255, 253, 253); /* Note text color */
+}
+
+.alert {
+  margin-top: 10px; /* Margin for alerts */
+}
+
+.register-btn {
+  background-color: #ffffff; /* Button background color */
+  border-color: #ffffff;
+  color: black;
+}
+
+.register-btn:hover {
+  background-color: #775c5c; /* Button hover color */
+}
+
+.login-btn {
+  background-color: #ffffff; /* Button background color */
+  color: black;
+  border-color: #ffffff; /* Button border color */
+}

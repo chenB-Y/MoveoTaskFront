@@ -1,6 +1,7 @@
 import axios from 'axios';
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
+import './AdminHomePage.css';
 
 const AdminHomePage: React.FC = () => {
   const [songName, setSongName] = useState('');
@@ -30,9 +31,12 @@ const AdminHomePage: React.FC = () => {
   return (
     <div className="home-container">
       <h1>Search any song . . .</h1>
+      <br></br>
       <form onSubmit={handleSubmit}>
         <div>
-          <label htmlFor="SongName">DesireSong:</label>
+          <label htmlFor="SongName" className="admin-input">
+            DesireSong:
+          </label>
           <input
             type="text"
             id="SongName"
@@ -41,8 +45,9 @@ const AdminHomePage: React.FC = () => {
             required
           />
         </div>
-        {error && <p className="error">{error}</p>}
-        <button type="submit" disabled={loading}>
+        <br></br>
+        {error && <p className="error ">{error}</p>}
+        <button type="submit" disabled={loading} className="btn btn-primary">
           {loading ? 'Good choice !' : 'search'}
         </button>
       </form>

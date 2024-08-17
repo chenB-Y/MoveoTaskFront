@@ -62,8 +62,8 @@ function LivePage() {
   useEffect(() => {
     if (isScrolling) {
       scrollIntervalRef.current = window.setInterval(() => {
-        window.scrollBy(0, 1); // Adjust the speed by changing the number
-      }, 50); // Adjust the speed by changing the interval
+        window.scrollBy(0, 3); // Increased the scroll step to 3 pixels for faster scrolling
+      }, 20); // Decreased the interval to 20ms for faster updates
     } else {
       if (scrollIntervalRef.current) {
         clearInterval(scrollIntervalRef.current);
@@ -81,8 +81,8 @@ function LivePage() {
   const songContent = response.songContent || '';
 
   return (
-    <div className="App" style={{ padding: '20px', position: 'relative' }}>
-      {admin === 'singers' ? (
+    <div className="App" style={{ padding: '50px', position: 'relative' }}>
+      {admin === 'singer' ? (
         <div>
           <h1>Song Lyrics</h1>
           <h2>Enjoy singing</h2>
@@ -97,10 +97,12 @@ function LivePage() {
       <div
         dangerouslySetInnerHTML={{ __html: songContent }}
         style={{
-          padding: '20px',
+          padding: '10px',
           border: '1px solid #ccc',
           borderRadius: '8px',
           marginTop: '20px',
+          fontSize: '75px',
+          maxWidth: '90%',
         }}
       />
       {admin === 'admin' && <button onClick={handleQuit}>Quit</button>}
