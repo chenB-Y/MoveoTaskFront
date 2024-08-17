@@ -9,6 +9,7 @@ interface Song {
   songTitle: string;
   artist: string;
   href: string;
+  imageUrl: string; // Add imgUrl to the interface
 }
 
 const ResultPage: React.FC = () => {
@@ -19,6 +20,7 @@ const ResultPage: React.FC = () => {
 
   useEffect(() => {
     const newSocket = io('https://moveotaskback-production.up.railway.app', {
+      //const newSocket = io('http://localhost:3000', {
       withCredentials: true,
     });
 
@@ -45,6 +47,7 @@ const ResultPage: React.FC = () => {
   ) => {
     const responseInst = await axios.post(
       'https://moveotaskback-production.up.railway.app/song/instruments',
+      //'http://localhost:3000/song/instruments',
       {
         desireSong: href,
       }
@@ -56,6 +59,7 @@ const ResultPage: React.FC = () => {
 
     const responseSingers = await axios.post(
       'https://moveotaskback-production.up.railway.app/song/singers',
+      //'http://localhost:3000/song/singers',
       {
         desireSong: href,
       }
@@ -72,12 +76,21 @@ const ResultPage: React.FC = () => {
 
   return (
     <div className="result-container">
-      <h1>Result Page</h1>
+      <h1>Result</h1>
+      <h3>
+        <b>Click on the desired song.</b>
+      </h3>
       {response.length > 0 ? (
         <div className="result-list">
           {response.map((item: Song, index: number) => (
             <div key={index} className="result-item">
               <div className="result-row">
+                <img
+                  src={item.imageUrl}
+                  alt={item.songTitle}
+                  className="song-image"
+                />{' '}
+                {/* Display the image */}
                 <p
                   className="song-title"
                   onClick={() =>

@@ -7,6 +7,7 @@ const RegisterPage: React.FC = () => {
   const [password, setPassword] = useState('');
   const [username, setUsername] = useState('');
   const [error, setError] = useState<string | null>(null);
+  const [success, setSuccess] = useState<string | null>(null);
   const [loading, setLoading] = useState(false);
   const [instrument, setInstrument] = useState('');
   const location = useLocation();
@@ -16,10 +17,12 @@ const RegisterPage: React.FC = () => {
     event.preventDefault();
     setLoading(true);
     setError(null);
+    setSuccess(null);
 
     try {
       const response = await axios.post(
         'https://moveotaskback-production.up.railway.app/auth/register',
+        //'http://localhost:3000/auth/register',
         {
           email: email,
           password: password,
@@ -29,16 +32,18 @@ const RegisterPage: React.FC = () => {
       );
       // Handle successful response
       console.log('Registration successful:', response.data);
+      setSuccess('Registration successful! Welcome to the Band!');
     } catch (error) {
       // Handle error
-      setError('An error occurred' + error);
+      setError('An error occurred. Please try again.');
+      console.error(error);
     } finally {
       setLoading(false);
     }
   };
 
   return (
-    <div className="register-container">
+    <div className="register-container" style={{ padding: '20px' }}>
       <h1>Register {type}</h1>
       <form onSubmit={handleSubmit}>
         <div>
@@ -49,6 +54,7 @@ const RegisterPage: React.FC = () => {
             value={type === 'admin' ? 'admin' : username}
             onChange={(e) => setUsername(e.target.value)}
             required
+            disabled={loading}
           />
         </div>
         <div>
@@ -59,6 +65,7 @@ const RegisterPage: React.FC = () => {
             value={email}
             onChange={(e) => setEmail(e.target.value)}
             required
+            disabled={loading}
           />
         </div>
         <div>
@@ -69,21 +76,35 @@ const RegisterPage: React.FC = () => {
             value={password}
             onChange={(e) => setPassword(e.target.value)}
             required
+            disabled={loading}
           />
         </div>
         {type !== 'admin' && (
           <div>
             <label htmlFor="instrument">Instrument:</label>
+            <p>
+              <b>Singers type "singer", other write your instrument.</b>
+            </p>
             <input
               type="text"
               id="instrument"
               value={type === 'admin' ? 'admin' : instrument}
               onChange={(e) => setInstrument(e.target.value)}
               required
+              disabled={loading}
             />
           </div>
         )}
-        {error && <p className="error">{error}</p>}
+        {error && (
+          <p className="error" style={{ color: 'red' }}>
+            {error}
+          </p>
+        )}
+        {success && (
+          <p className="success" style={{ color: 'green' }}>
+            {success}
+          </p>
+        )}
         <button type="submit" disabled={loading}>
           {loading ? 'Registering...' : 'Register'}
         </button>

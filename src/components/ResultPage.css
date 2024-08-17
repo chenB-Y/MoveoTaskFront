@@ -12,16 +12,27 @@
   padding: 10px;
   border: 1px solid #ddd;
   border-radius: 5px;
+  display: flex;
+  align-items: center;
 }
 
 .result-row {
   display: flex;
-  justify-content: space-between;
+  align-items: center;
+}
+
+.song-image {
+  width: 80px; /* Set the width to your desired size */
+  height: 80px; /* Set the height to your desired size */
+  object-fit: cover; /* Ensure the image covers the area without distortion */
+  margin-right: 15px; /* Space between image and text */
+  border-radius: 5px; /* Optional: add rounded corners to images */
 }
 
 .song-title {
   font-weight: bold;
   cursor: pointer;
+  flex: 1; /* Make title text take available space */
 }
 
 .artist {

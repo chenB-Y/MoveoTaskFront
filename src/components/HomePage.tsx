@@ -20,6 +20,7 @@ const HomePage: React.FC = () => {
 
     console.log('HomePage response:', response);
     const socket = io('https://moveotaskback-production.up.railway.app', {
+      //const socket = io('http://localhost:3000', {
       withCredentials: true,
     });
 
@@ -50,9 +51,9 @@ const HomePage: React.FC = () => {
 
   return (
     <div className="home-container">
-      <h1>Home</h1>
-      <p>Welcome to the home page!</p>
-      {waiting ? <p>Loading...</p> : <p>Loaded!</p>}
+      <h1>
+        {waiting ? <p>Waiting for next song . . . </p> : <p>Here we go !</p>}
+      </h1>
     </div>
   );
 };

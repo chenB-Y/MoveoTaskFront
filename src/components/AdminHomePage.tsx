@@ -16,6 +16,7 @@ const AdminHomePage: React.FC = () => {
     try {
       const response = await axios.post(
         'https://moveotaskback-production.up.railway.app/admin/desireSong',
+        //'http://localhost:3000/admin/desireSong',
         { songName }
       );
       navigate('/resultPage', { state: { response: response.data } });
@@ -28,7 +29,7 @@ const AdminHomePage: React.FC = () => {
 
   return (
     <div className="home-container">
-      <h1>Admin Home</h1>
+      <h1>Search any song . . .</h1>
       <form onSubmit={handleSubmit}>
         <div>
           <label htmlFor="SongName">DesireSong:</label>
@@ -42,7 +43,7 @@ const AdminHomePage: React.FC = () => {
         </div>
         {error && <p className="error">{error}</p>}
         <button type="submit" disabled={loading}>
-          {loading ? 'waitttttt!' : 'connect to everybody'}
+          {loading ? 'Good choice !' : 'search'}
         </button>
       </form>
     </div>

@@ -18,6 +18,7 @@ function LivePage() {
 
   useEffect(() => {
     const newSocket = io('https://moveotaskback-production.up.railway.app', {
+      //const newSocket = io('http://localhost:3000', {
       withCredentials: true,
     });
 
@@ -121,7 +122,6 @@ function LivePage() {
       >
         {isScrolling ? 'Stop Scrolling' : 'Start Scrolling'}
       </button>
-      wewew
     </div>
   );
 }
