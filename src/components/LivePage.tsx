@@ -17,7 +17,7 @@ function LivePage() {
   const scrollIntervalRef = useRef<number | null>(null);
 
   useEffect(() => {
-    const newSocket = io('http://localhost:3000', {
+    const newSocket = io('https://moveotaskback-production.up.railway.app', {
       withCredentials: true,
     });
 

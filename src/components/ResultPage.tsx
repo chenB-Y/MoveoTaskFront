@@ -18,7 +18,7 @@ const ResultPage: React.FC = () => {
   const navigate = useNavigate();
 
   useEffect(() => {
-    const newSocket = io('http://localhost:3000', {
+    const newSocket = io('https://moveotaskback-production.up.railway.app', {
       withCredentials: true,
     });
 
@@ -44,7 +44,7 @@ const ResultPage: React.FC = () => {
     artist: string
   ) => {
     const responseInst = await axios.post(
-      'http://localhost:3000/song/instruments',
+      'https://moveotaskback-production.up.railway.app/song/instruments',
       {
         desireSong: href,
       }
@@ -55,7 +55,7 @@ const ResultPage: React.FC = () => {
     }
 
     const responseSingers = await axios.post(
-      'http://localhost:3000/song/singers',
+      'https://moveotaskback-production.up.railway.app/song/singers',
       {
         desireSong: href,
       }

@@ -18,12 +18,15 @@ const RegisterPage: React.FC = () => {
     setError(null);
 
     try {
-      const response = await axios.post('http://localhost:3000/auth/register', {
-        email: email,
-        password: password,
-        username: type === 'admin' ? 'admin' : username,
-        instrument: type === 'admin' ? 'admin' : instrument,
-      });
+      const response = await axios.post(
+        'https://moveotaskback-production.up.railway.app/auth/register',
+        {
+          email: email,
+          password: password,
+          username: type === 'admin' ? 'admin' : username,
+          instrument: type === 'admin' ? 'admin' : instrument,
+        }
+      );
       // Handle successful response
       console.log('Registration successful:', response.data);
     } catch (error) {

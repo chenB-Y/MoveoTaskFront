@@ -15,7 +15,7 @@ const AdminHomePage: React.FC = () => {
 
     try {
       const response = await axios.post(
-        'http://localhost:3000/admin/desireSong',
+        'https://moveotaskback-production.up.railway.app/admin/desireSong',
         { songName }
       );
       navigate('/resultPage', { state: { response: response.data } });

@@ -15,10 +15,13 @@ const LoginPage: React.FC = () => {
     setError(null);
 
     try {
-      const response = await axios.post('http://localhost:3000/auth/login', {
-        email: email,
-        password: password,
-      });
+      const response = await axios.post(
+        'https://moveotaskback-production.up.railway.app/auth/login',
+        {
+          email: email,
+          password: password,
+        }
+      );
       // Handle successful response
       console.log('Login successful:', response.data);
       if (response.data.instrument === 'admin') {

@@ -19,7 +19,7 @@ const HomePage: React.FC = () => {
     }
 
     console.log('HomePage response:', response);
-    const socket = io('http://localhost:3000', {
+    const socket = io('https://moveotaskback-production.up.railway.app', {
       withCredentials: true,
     });
 
