@@ -1,0 +1,33 @@
+.result-container {
+  padding: 20px;
+}
+
+.result-list {
+  display: flex;
+  flex-direction: column;
+}
+
+.result-item {
+  margin-bottom: 15px;
+  padding: 10px;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+}
+
+.result-row {
+  display: flex;
+  justify-content: space-between;
+}
+
+.song-title {
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.artist {
+  color: #555;
+}
+
+.hidden-link {
+  display: none; /* Hide the link but keep it in the DOM */
+}
