@@ -1,7 +1,7 @@
 import axios from 'axios';
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
-import './AdminHomePage.css';
+import '../style/AdminHomePage.css';
 
 const AdminHomePage: React.FC = () => {
   const [songName, setSongName] = useState('');

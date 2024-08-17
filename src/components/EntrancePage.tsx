@@ -1,6 +1,6 @@
 import React from 'react';
 import { useNavigate } from 'react-router-dom';
-import './EntrancePage.css'; // Import the CSS file
+import '../style/EntrancePage.css'; // Import the CSS file
 
 const EntrancePage: React.FC = () => {
   const navigate = useNavigate();

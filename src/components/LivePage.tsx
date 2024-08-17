@@ -102,7 +102,7 @@ function LivePage() {
           borderRadius: '8px',
           marginTop: '20px',
           fontSize: '75px',
-          maxWidth: '90%',
+          maxWidth: '110%',
         }}
       />
       {admin === 'admin' && <button onClick={handleQuit}>Quit</button>}

@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { useLocation } from 'react-router-dom';
-import './ResultPage.css'; // Import your CSS file for styling
+import '../style/ResultPage.css'; // Import your CSS file for styling
 import { useNavigate } from 'react-router-dom';
 import io, { Socket } from 'socket.io-client';
 import axios from 'axios';

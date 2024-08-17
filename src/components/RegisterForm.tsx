@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import axios from 'axios';
 import 'bootstrap/dist/css/bootstrap.min.css'; // Import Bootstrap CSS
-import './Register.css'; // Import the custom CSS file
+import '../style/Register.css'; // Import the custom CSS file
 import { useLocation } from 'react-router-dom';
 
 const RegisterPage: React.FC = () => {
@@ -20,6 +20,13 @@ const RegisterPage: React.FC = () => {
     setLoading(true);
     setError(null);
     setSuccess(null);
+
+    // Password validation: ensure password has at least 6 characters
+    if (password.length < 6) {
+      setError('Password must be at least 6 characters long.');
+      setLoading(false);
+      return;
+    }
 
     try {
       await axios.post(
@@ -91,6 +98,10 @@ const RegisterPage: React.FC = () => {
                 required
                 disabled={loading}
               />
+              {/* Display a note about the password requirement */}
+              <small className="form-text text-muted">
+                Password must be at least 6 characters long.
+              </small>
             </div>
             {type !== 'admin' && (
               <div className="mb-3">
@@ -101,7 +112,7 @@ const RegisterPage: React.FC = () => {
                   Instrument:
                 </label>
                 <p className="instrument-note">
-                  <b>Singers type "singer", other write your instrument.</b>
+                  <b>Singers type "singer", others write your instrument.</b>
                 </p>
                 <input
                   type="text"

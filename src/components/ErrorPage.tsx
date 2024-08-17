@@ -1,7 +1,7 @@
 // src/components/NotFoundPage.tsx
 import React from 'react';
 import { Link } from 'react-router-dom';
-import './ErrorPage.css'; // Optional: Import a CSS file for styling
+import '../style/ErrorPage.css'; // Optional: Import a CSS file for styling
 
 const NotFoundPage: React.FC = () => {
   return (

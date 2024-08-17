@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import axios from 'axios';
 import { useNavigate } from 'react-router-dom';
 import 'bootstrap/dist/css/bootstrap.min.css'; // Import Bootstrap CSS
-import './LoginPage.css'; // Import the custom CSS file
+import '../style/LoginPage.css'; // Import the custom CSS file
 
 const LoginPage: React.FC = () => {
   const [email, setEmail] = useState('');
