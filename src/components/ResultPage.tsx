@@ -19,8 +19,8 @@ const ResultPage: React.FC = () => {
   const navigate = useNavigate();
 
   useEffect(() => {
-    const newSocket = io('https://moveotaskback-production.up.railway.app', {
-      //const newSocket = io('http://localhost:3000', {
+    const newSocket = io(`${import.meta.env.VITE_BACK_URL_PROD}`, {
+      //const newSocket = io(`${import.meta.env.VITE_BACK_URL_DEV}`, {
       withCredentials: true,
     });
 
@@ -46,8 +46,8 @@ const ResultPage: React.FC = () => {
     artist: string
   ) => {
     const responseInst = await axios.post(
-      'https://moveotaskback-production.up.railway.app/song/instruments',
-      //'http://localhost:3000/song/instruments',
+      `${import.meta.env.VITE_BACK_URL_PROD}/song/instruments`,
+      //`${import.meta.env.VITE_BACK_URL_DEV}/song/instruments`,
       {
         desireSong: href,
       }
@@ -58,8 +58,8 @@ const ResultPage: React.FC = () => {
     }
 
     const responseSingers = await axios.post(
-      'https://moveotaskback-production.up.railway.app/song/singers',
-      //'http://localhost:3000/song/singers',
+      `${import.meta.env.VITE_BACK_URL_PROD}/song/singers`,
+      //`${import.meta.env.VITE_BACK_URL_DEV}/song/singers`,
       {
         desireSong: href,
       }

@@ -19,8 +19,8 @@ const HomePage: React.FC = () => {
     }
 
     console.log('HomePage response:', response);
-    const socket = io('https://moveotaskback-production.up.railway.app', {
-      //const socket = io('http://localhost:3000', {
+    const socket = io(`${import.meta.env.VITE_BACK_URL_PROD}`, {
+      //const socket = io(`${import.meta.env.VITE_BACK_URL_DEV}`, {
       withCredentials: true,
     });
 

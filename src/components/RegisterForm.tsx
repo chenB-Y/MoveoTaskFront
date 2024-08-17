@@ -21,8 +21,8 @@ const RegisterPage: React.FC = () => {
 
     try {
       const response = await axios.post(
-        'https://moveotaskback-production.up.railway.app/auth/register',
-        //'http://localhost:3000/auth/register',
+        `${import.meta.env.VITE_BACK_URL_PROD}/auth/register`,
+        //`${import.meta.env.VITE_BACK_URL_DEV}/auth/register`,
         {
           email: email,
           password: password,

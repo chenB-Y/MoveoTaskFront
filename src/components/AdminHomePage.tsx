@@ -15,8 +15,8 @@ const AdminHomePage: React.FC = () => {
 
     try {
       const response = await axios.post(
-        'https://moveotaskback-production.up.railway.app/admin/desireSong',
-        //'http://localhost:3000/admin/desireSong',
+        `${import.meta.env.VITE_BACK_URL_PROD}/admin/desireSong`,
+        //`${import.meta.env.VITE_BACK_URL_DEV}/admin/desireSong`,
         { songName }
       );
       navigate('/resultPage', { state: { response: response.data } });
